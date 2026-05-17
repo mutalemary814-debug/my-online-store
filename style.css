@@ -1,0 +1,260 @@
+
+body {
+            background-color: #030205 !important;
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        /* --- 1. NAVIGATION BUTTON (Place this above Product Container) --- */
+.category-menu {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.category-btn {
+    display: inline-block;
+    background-color: #08034e; /* Your dark luxury background */
+    color: #86858e;           /* Gold text */
+    padding: 12px 40px;
+    text-decoration: none;
+    border: 2px solid #D4AF37;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 19px;
+    transition: 0.4s ease;
+}
+
+.category-btn:hover {
+    background-color: #D4AF37;
+    color: #120b0d;
+    transform: translateY(-3px);
+}
+
+        /* THE GRID: This ensures products stay side-by-side */
+/* This is the parent container holding all 4 products */
+.product-container {
+    display: flex;
+    flex-wrap: wrap;      /* CRITICAL: This allows the 3rd and 4th to form a new row */
+    justify-content: center; 
+    gap: 20px;            /* The space between your luxury items */
+    padding: 20px;
+    width:100%
+}
+.product{
+    flex:0 0 45%;
+    text-align:center;
+box-sizing: border-box;
+}
+
+
+/* THE CARD: Uniform boxes for every item */
+.product {
+    background-color: rgb(12, 11, 13);
+    border-radius: 12px;
+    width: 45%;            /* Fixed width so they are identical */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(9, 6, 11, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Keeps the 'Order' button at the bottom */
+}
+
+/* THE IMAGE: This fixes the "different sizes" problem */
+.product img {
+    width: 100%;
+    max-width: 100%;
+    height: 250px;           /* Forces all images to the same height */
+    object-fit: cover;      /* Crops the image perfectly to fit the box */
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* TEXT STYLING */
+.product h3 {
+    font-size: 20px;
+    color: white;
+    margin: 10px 0;
+}
+
+.product p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #093ed0;         /* Gold color for that luxury feel */
+}
+
+/* BUTTONS */
+button {
+    background: rgb(167, 141, 12);
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    color: rgb(148, 13, 232);
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ffffff;
+    color: #520cdf;
+    display: inline-block;
+}
+
+.hero {
+    height: 100vh;
+    background-image: url('images/perfume one.jpg'); /* Match your folder name exactly! */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+/* This makes the header transparent and blurry */
+header {
+    background-color: rgba(12, 11, 72, 0.1); /* Very light transparency */
+    backdrop-filter: blur(10px); /* The "frosted glass" effect */
+    padding: 20px 0;
+    width: 100%;
+}
+
+/* Removes bullet points and centers the menu */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(6, 15, 123);
+    font-weight: bold;
+    margin: 0 20px;
+}
+.content {
+    position: absolute;
+    top: 50%; /* Moves it to the middle vertically */
+    left: 5%; /* Pushes it to the left side */
+    transform: translateY(-50%); /* Centers the text perfectly */
+    width: 300px; /* Keeps the text in a nice narrow column */
+    color: rgb(232, 239, 242);
+    text-align: left;
+    z-index: 5;
+}
+
+.content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 8px rgba(2, 3, 17, 0.7);
+}
+
+.slogan {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    font-style: italic;
+    text-shadow: 1px 1px 5px rgba(7, 3, 27, 0.7);
+    border-left: 3px solid rgb(34, 15, 117); /* Adds a classy vertical line */
+    padding-left: 15px;
+}
+.price {
+  color: red !important;
+  font-size: 30px !important;
+  display: block !important;
+}
+
+/* ---------------------- Handbags Hero Section ---------------------- */
+
+/* Hero container */
+.hero-handbags {
+  height: 250px; /* adjust based on your image ratio */
+  background-image: url('images/herme\'s\ birkin.jpg'); /* <- put your image path here */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative; /* needed for overlay */
+  display: flex;
+  flex-direction: column;
+  align-items:flex-start;
+  justify-content: flex-start;
+  padding-left:30px;
+  padding-top: 40px;
+  color: #efedf7; /* text color */
+  margin-bottom:500px;/* add a space below hero before products*/
+}
+
+/* Overlay for blur + transparency */
+.hero-handbags::before {
+  content: "";
+  position: absolute;
+   top: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  background: rgba(0,0,0,0.3); /* semi-transparent dark layer */
+  backdrop-filter: blur(4px);   /* subtle blur effect */
+  z-index: 1; /* keeps it behind the text */
+}
+.hero-handbag h1,
+.hero-handbag p {
+  position: relative;  /* sits above overlay */
+  z-index: 2;          /* higher than ::before */
+  text-align: left;
+  margin-top: 160px;   /* push text below the blur */
+  margin-left: 30px;
+}
+
+/* Hero content (titles + back links) */
+.hero-content {
+  position: relative;
+  z-index: 1; /* ensures text sits above overlay */
+  padding: 20px0 0 0;
+  text-align: left;
+}
+
+/* Back navigation links */
+.back-links {
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.back-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 5px;
+  transition: color 0.3s;
+}
+
+.back-links a:hover {
+  color: #ffd700; /* optional hover color */
+}
+
+/* Hero titles */
+.hero-title {
+  font-size: 48px;
+  font-weight: bold;
+  margin: 10px 0 0 0;
+}
+
+.hero-subtitle {
+  font-size: 20;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.fragrance .product img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+
+
+
+
